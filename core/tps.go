@@ -53,6 +53,8 @@ func TPS() bool {
 			return false
 		}
 		log.Splitf("reset contract %s success", contract.Hex())
+	} else {
+		log.Splitf("contract is %s", contract.Hex())
 	}
 
 	box := &Box{
