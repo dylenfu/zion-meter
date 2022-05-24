@@ -1,0 +1,102 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "input",
+						"type": "bytes"
+					},
+					{
+						"internalType": "uint64",
+						"name": "complexity",
+						"type": "uint64"
+					}
+				],
+				"name": "costManyGas",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint64",
+						"name": "_startTime",
+						"type": "uint64"
+					}
+				],
+				"name": "reset",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "startTime",
+				"outputs": [
+					{
+						"internalType": "uint64",
+						"name": "",
+						"type": "uint64"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "txNum",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"data_stat.sol": "dataStat"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"data_stat.sol": {
+			"keccak256": "0xbada09496b621b8e1fa0983f73a0b32a3fe3a9eda6865f02b6b34a2dfc62dd3a",
+			"urls": [
+				"bzz-raw://dda9f4d792472814063bb62950b0aeb08a6fe727ade26ec557119be5219e1487",
+				"dweb:/ipfs/QmbsUtrnURrKuRHWgUfrdGwYTekWkbxeNEhx92ThHXnZsX"
+			]
+		}
+	},
+	"version": 1
+}

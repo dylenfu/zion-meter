@@ -1,6 +1,7 @@
 package core
 
 import (
+	"encoding/hex"
 	"math/big"
 	"time"
 
@@ -13,6 +14,9 @@ import (
 var (
 	ETH1, _  = new(big.Int).SetString("1000000000000000000", 10)
 	gasUsage = new(big.Int).Mul(big.NewInt(1), ETH1)
+
+	costInput, _   = hex.DecodeString("ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff")
+	costComplexity = uint64(8)
 )
 
 // TPS try to test hotstuff tps, params nodeList represents multiple ethereum rpc url addresses,
@@ -113,7 +117,7 @@ func (u *User) run(contract common.Address) {
 	for {
 		select {
 		case <-u.sig:
-			if tx, nonce, err := u.acc.Add(contract); err != nil {
+			if tx, nonce, err := u.acc.CostManyGas(contract, costInput, costComplexity); err != nil {
 				log.Errorf("send tx %s failed, nonce %d, err: %v", tx.Hex(), nonce, err)
 				u.acc.ResetNonce(nonce)
 			}
@@ -244,7 +248,7 @@ func (b *Box) CalculateTPS() {
 	for {
 		select {
 		case <-ticker.C:
-			total, err := b.master.TxNum(b.contract)
+			total, err := b.master.DataStatTxNum(b.contract)
 			if err != nil {
 				log.Errorf("get total tx number failed, err: %v", err)
 			} else if total == 0 {

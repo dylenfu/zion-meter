@@ -298,7 +298,7 @@ func (c *Account) SendTx(signedTx *types.Transaction) error {
 
 func (c *Account) makeDeployAuth() *bind.TransactOpts {
 	auth := bind.NewKeyedTransactor(c.pk)
-	auth.GasLimit = 150000
+	auth.GasLimit = 500000
 	auth.Nonce = new(big.Int).SetUint64(c.Nonce())
 	return auth
 }

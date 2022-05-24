@@ -82,7 +82,7 @@ func (c *Account) CostManyGas(contract common.Address, callData []byte, complexi
 		return common.EmptyHash, c.nonce, ErrNoSender
 	}
 
-	payload, err := utils.PackMethod(dataStatABI, "costManyGas")
+	payload, err := utils.PackMethod(dataStatABI, "costManyGas", callData, complexity)
 	if err != nil {
 		return common.EmptyHash, c.nonce, err
 	}

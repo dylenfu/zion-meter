@@ -75,7 +75,7 @@ func TestStat(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	contract, err := testMaster.Deploy(startTime)
+	contract, err := testMaster.Deploy()
 	if err != nil {
 		t.Fatal(err)
 	}
